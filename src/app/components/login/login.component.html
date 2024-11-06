@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="form-container">
-        <form [formGroup]="loginForm" class="example-form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
             <mat-form-field class="" appearance="outline">
               <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
                      placeholder="Ex. pat@example.com">
