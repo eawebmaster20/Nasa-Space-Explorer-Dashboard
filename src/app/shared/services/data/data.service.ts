@@ -43,7 +43,7 @@ export class DataService {
     this.api.marsRoverPhotos().subscribe({
       next: (data: any) => {
         this.favorites= data
-        console.log('Astronomy Pic of the Day:', this.mrp);
+        console.log('Rov:', this.mrp);
       },
       error: (error) => {
         console.error('MRP:', error);
