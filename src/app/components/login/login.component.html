@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="form-container">
+        <form [formGroup]="loginForm" class="example-form">
+            <mat-form-field class="" appearance="outline">
+              <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+                     placeholder="Ex. pat@example.com">
+              @if (loginForm.get('email')?.hasError('email') && !loginForm.get('email')?.hasError('required')) {
+                <mat-error>Please enter a valid email address</mat-error>
+              }
+              @if (loginForm.get('email')?.hasError('required')) {
+                <mat-error>Email is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field class="" appearance="outline">
+                <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher"
+                       placeholder="*****">
+                @if (loginForm.get('password')?.hasError('email') && !loginForm.get('password')?.hasError('required')) {
+                  <mat-error>Please enter a valid email address</mat-error>
+                }
+                @if (loginForm.get('password')?.hasError('required')) {
+                  <mat-error>Email is <strong>required</strong></mat-error>
+                }
+              </mat-form-field>
+              <div class="submit-container">
+                <button type="submit" mat-raised-button color="primary">Login</button>
+              </div>
+          </form>
+    </div>
+</div>
