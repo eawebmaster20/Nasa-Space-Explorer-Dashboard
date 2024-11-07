@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { POD } from '../../models/picOfDayRes.interface';
+import { IRov } from '../../models/rov.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class DataService {
       service_version: '',
       title: '',
       url: '',
-  }
-  );
+  });
+  rovPics = new BehaviorSubject<IRov[] | null>(null);
   mrp:any[]=[];
   favorites:any[]=[];
   constructor(private api:ApiService) { }
@@ -31,7 +32,7 @@ export class DataService {
     this.api.picOfTheDay().subscribe({
       next: (data: any) => {
         this.picOfDay.next(data)
-        console.log('Astronomy Pic of the Day:', this.mrp);
+        // console.log('Astronomy Pic of the Day:', data);
       },
       error: (error) => {
         console.error('Error fetching Astronomy Pic of the Day:', error);
@@ -39,11 +40,11 @@ export class DataService {
     })
   }
 
-  fetchRoverPhotos(){
-    this.api.marsRoverPhotos().subscribe({
-      next: (data: any) => {
-        this.favorites= data
-        console.log('Rov:', this.mrp);
+  fetchRoverPhotos(name:string  ){
+    this.api.marsRoverPhotos(name).subscribe({
+      next: (data) => {
+        this.rovPics.next(data)
+        console.log('Rov:', data);
       },
       error: (error) => {
         console.error('MRP:', error);
@@ -51,3 +52,4 @@ export class DataService {
     })
   }
 }
+

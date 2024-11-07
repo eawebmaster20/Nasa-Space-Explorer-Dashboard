@@ -1,4 +1,29 @@
 .container{
     background-color: #d7d7d7;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    mat-list-item{
+        cursor: pointer;
+    }
+    ul{
+        margin: 0;
+        list-style: none;
+        cursor: pointer;
+    }
+    .action-btn{
+        margin: auto 1rem 1rem 1rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        
+        .content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
 }

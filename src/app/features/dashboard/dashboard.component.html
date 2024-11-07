@@ -1,13 +1,9 @@
 <div class="container-fluid">
     <mat-drawer-container class="example-container" autosize>
-        <button (click)="logout()">logout</button>
         <mat-drawer #drawer class="example-sidenav" mode="side" opened>
             <app-sidebar/>
         </mat-drawer>
         <mat-drawer-content>
-                <button type="button" mat-button (click)="drawer.toggle()">
-                    Toggle sidenav
-                </button>
                 <router-outlet/>
             </mat-drawer-content>
       </mat-drawer-container>

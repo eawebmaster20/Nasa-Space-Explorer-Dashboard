@@ -12,9 +12,6 @@ import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 })
 export class DashboardComponent {
 
-  constructor(private router: Router) {}
-  logout(){
-    localStorage.removeItem('fakeToken');
-    this.router.navigateByUrl('/auth/login');
-  }
+  
+
 }
