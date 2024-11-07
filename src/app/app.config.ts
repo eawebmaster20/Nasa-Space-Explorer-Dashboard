@@ -6,10 +6,10 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { provideState, provideStore } from '@ngrx/store';
-import { provideEffects } from '@ngrx/effects';
-import { boardReducer } from './shared/store/store.reducers';
-import { BoardEffects } from './shared/store/store.effects';
 import { apiKeyInterceptor } from './shared/services/interceptors/api-key.interceptor';
+import { roversReducer } from './shared/store/store.reducers';
+import { provideEffects } from '@ngrx/effects';
+import { RoverEffects } from './shared/store/store.effects';
 
 
 export const appConfig: ApplicationConfig = {
@@ -22,9 +22,10 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideHttpClient(withFetch()),
     provideState({
-      name: 'store',
-      reducer: boardReducer,
+      name: 'rovers',
+      reducer: roversReducer,
     }),
+    // provideEffects(RoverEffects),
     provideStoreDevtools({maxAge:25, logOnly: false}),
   ]
 };

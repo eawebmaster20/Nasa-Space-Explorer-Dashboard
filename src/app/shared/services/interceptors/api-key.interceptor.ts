@@ -7,6 +7,6 @@ export const apiKeyInterceptor: HttpInterceptorFn = (req, next) => {
       api_key: apiKey 
     }
   });
-  console.log(clonedRequest.urlWithParams);
+  // console.log(clonedRequest.urlWithParams);
   return next(clonedRequest);
 };

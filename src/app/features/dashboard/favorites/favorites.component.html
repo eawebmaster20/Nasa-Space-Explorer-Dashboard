@@ -1,1 +1,15 @@
-<p>favorites works!</p>
+<div class="container-fluid">
+    @for (item of (store.select(selectAll) | async); track item) {
+        <app-card class="" [photo]="item"/>
+    }
+    
+</div>
+@for (item of (store.select(selectAll) | async); track item) {
+}
+@empty {
+    <div class="favorite-empty">
+        <h2>No favorites yet</h2>
+        <p>Add some photos to your favorites using the bookmark icon on the card</p>
+        <mat-icon>favorite_border</mat-icon>
+    </div>
+}
