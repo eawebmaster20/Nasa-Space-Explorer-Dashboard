@@ -1,5 +1,5 @@
-<!-- @for (item of [1, 2, 3]; track item) {
-    <app-card/>
-     {{item}}
-} -->
-     ljosdjf
+<div class="container-fluid">
+    @for (item of (dataService.rovPics | async); track item) {
+        <app-card class="" [photo]="item"/>
+    }
+</div>

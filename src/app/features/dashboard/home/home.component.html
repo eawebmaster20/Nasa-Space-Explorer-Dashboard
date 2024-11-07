@@ -1,1 +1,7 @@
-<img [src]="" alt="" srcset="">
+<div class="container-fluid">
+    <img [src]="(dataService.picOfDay | async)?.url" alt="" srcset="">
+    <div class="info">
+        <h2>{{(dataService.picOfDay | async)?.title}}</h2>
+        <p>{{(dataService.picOfDay | async)?.explanation}}</p>
+    </div>
+</div>
