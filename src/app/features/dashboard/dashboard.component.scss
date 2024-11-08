@@ -5,5 +5,21 @@
 
     mat-drawer-container{
         width: 100%;
+
+        mat-drawer{
+            width: 58px;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    mat-drawer-container{
+        width: 100%;
+
+        mat-drawer{
+            width: 260px !important;
+
+        }
     }
 }

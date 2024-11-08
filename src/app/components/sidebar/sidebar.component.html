@@ -1,13 +1,23 @@
 <div class="container">
     <mat-list role="list">
-        <mat-list-item routerLink="" [class]="isActive('home')?'active-nav':'inactive-nav'" role="listitem">home</mat-list-item>
+        <mat-list-item routerLink="" [class]="isActive('home')?'active-nav':'inactive-nav'" role="listitem">
+          <button class="mobile" mat-icon-button><mat-icon>home</mat-icon></button>
+          <span class="destop">home</span>
+        </mat-list-item>
         <div class="item2">
           <mat-list-item routerLink="/dashboard/mrp" [class]="isActive('mrp')?'active-nav':'inactive-nav'" role="listitem">
+            <button class="mobile" mat-icon-button><mat-icon>camera</mat-icon></button>
             Mars Rover Pics
           </mat-list-item>
         </div>
-        <mat-list-item routerLink="/dashboard/neo" [class]="isActive('neo')?'active-nav':'inactive-nav'" role="listitem">Neo</mat-list-item>
-        <mat-list-item routerLink="/dashboard/favorite" [class]="isActive('favorite')?'active-nav':'inactive-nav'" role="listitem">Favorite</mat-list-item>
+        <mat-list-item routerLink="/dashboard/neo" [class]="isActive('neo')?'active-nav':'inactive-nav'" role="listitem">
+          <button class="mobile" mat-icon-button><mat-icon>rocket_launch</mat-icon></button>
+          Neo
+        </mat-list-item>
+        <mat-list-item routerLink="/dashboard/favorite" [class]="isActive('favorite')?'active-nav':'inactive-nav'" role="listitem">
+          <button class="mobile" mat-icon-button><mat-icon>favorite</mat-icon></button>
+          Favorite
+        </mat-list-item>
       </mat-list>
       
       <button class="action-btn" (click)="logout()">
@@ -15,5 +25,8 @@
         <div class="content">
           logout
         </div>
-        </button>
+      </button>
+      <button class="action-btn-sm" mat-icon-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button>
 </div>
