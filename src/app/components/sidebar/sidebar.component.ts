@@ -3,11 +3,12 @@ import {MatListModule} from '@angular/material/list';
 import { DataService } from '../../shared/services/data/data.service';
 import { Router, RouterLink } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatListModule, RouterLink, MatIconModule],
+  imports: [MatListModule, RouterLink, MatIconModule, MatButtonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
