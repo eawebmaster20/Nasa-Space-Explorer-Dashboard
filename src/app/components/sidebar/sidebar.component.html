@@ -1,23 +1,13 @@
 <div class="container">
     <mat-list role="list">
-        <mat-list-item routerLink="" [class]="isActive('')?'active-nav':'inactive-nav'" role="listitem">home</mat-list-item>
+        <mat-list-item routerLink="" [class]="isActive('home')?'active-nav':'inactive-nav'" role="listitem">home</mat-list-item>
         <div class="item2">
           <mat-list-item routerLink="/dashboard/mrp" [class]="isActive('mrp')?'active-nav':'inactive-nav'" role="listitem">
             Mars Rover Pics
           </mat-list-item>
-          <!-- <ul>
-            <li> 
-              <mat-list-item (click)="filterRoverPhotos('curiosity')" [class]="true ?'active-nav':'inactive-nav'">Curiosity</mat-list-item>
-            </li>
-            <li> 
-              <mat-list-item (click)="filterRoverPhotos('opportunity')" [class]="false?'active-nav':'inactive-nav'">Opportunity</mat-list-item>
-            </li>
-            <li> 
-              <mat-list-item (click)="filterRoverPhotos('spirit')" [class]="false?'active-nav':'inactive-nav'">Spirit</mat-list-item>
-            </li>
-          </ul> -->
         </div>
-        <mat-list-item routerLink="/dashboard/favorite" [class]="isActive('movies or TV series')?'active-nav':'inactive-nav'" role="listitem">Favorite</mat-list-item>
+        <mat-list-item routerLink="/dashboard/neo" [class]="isActive('neo')?'active-nav':'inactive-nav'" role="listitem">Neo</mat-list-item>
+        <mat-list-item routerLink="/dashboard/favorite" [class]="isActive('favorite')?'active-nav':'inactive-nav'" role="listitem">Favorite</mat-list-item>
       </mat-list>
       
       <button class="action-btn" (click)="logout()">

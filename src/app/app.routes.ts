@@ -13,6 +13,7 @@ export const routes: Routes = [
             { path: '', loadComponent: () => import('./features/dashboard/home/home.component').then(m => m.HomeComponent) },
             { path: 'favorite', loadComponent: () => import('./features/dashboard/favorites/favorites.component').then(m => m.FavoritesComponent) },
             { path: 'mrp', loadComponent: () => import('./features/dashboard/mars-rover-photos/mars-rover-photos.component').then(m => m.MarsRoverPhotosComponent) },
+            { path: 'neo', loadComponent: () => import('./features/dashboard/neo/neo.component').then(m => m.NeoComponent) },
         ]},
     { path: '**', redirectTo: '/auth/login', pathMatch: 'full' }
 ];
