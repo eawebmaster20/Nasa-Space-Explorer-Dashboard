@@ -39,8 +39,10 @@ export class LoginComponent implements OnInit{
     localStorage.getItem('fakeToken') ? this.router.navigate(['dashboard']):'';
   }
   onSubmit() {
-    console.log('onSubmit');
-    localStorage.setItem('fakeToken', 'testToken');
-    this.router.navigate(['dashboard']);
+    // console.log('onSubmit');
+    if (this.loginForm.valid) {
+      localStorage.setItem('fakeToken', 'testToken');
+      this.router.navigate(['dashboard']);
+    }
   }
 }

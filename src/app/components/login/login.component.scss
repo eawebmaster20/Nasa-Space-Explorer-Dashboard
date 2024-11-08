@@ -1,0 +1,21 @@
+.container-fluid{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    background-color: #e1e1e1;
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        padding: 1rem;
+        border: 2px solid;
+        border-radius: 8px;
+
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

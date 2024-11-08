@@ -1,22 +1,29 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State, boardAdaptor } from './store.entity';
+import { RoversState, rovAdapter } from './store.entity';
 
-export const selectBoardState = createFeatureSelector<State>('boards');
+// Select the main rover state
+export const selectRoversState = createFeatureSelector<RoversState>('rovers');
 
+// Selector for all rovers
+// export const selectAllRovers = createSelector(
+//   selectRoversState,
+//   rovAdapter.getSelectors().selectAll
+// );
 export const {
-  selectIds: selectBoardIds,
-  selectEntities: selectBoardEntities,
-  selectAll: selectAllBoards,
-  selectTotal: selectBoardTotal,
-} = boardAdaptor.getSelectors(selectBoardState);
+  selectIds: selectRoverIds,
+  selectEntities: selectRoverEntities,
+  selectAll: selectAllRovers,
+  selectTotal: selectRoverTotal,
+} = rovAdapter.getSelectors(selectRoversState);
 
-export const selectSelectedBoardId = createSelector(
-  selectBoardState,
-  (state: State) => state.ids
+// Selector for all favorites
+export const selectAllFavorites = createSelector(
+  selectRoversState,
+  (state) => state.favorites
 );
 
-export const selectSelectedBoard = createSelector(
-  selectBoardState,
-  (state: State) => state.favorites
+// Selector to check if a specific rover is in favorites
+export const selectIsFavorite = (id: number) => createSelector(
+  selectRoversState,
+  (state) => state.favorites.some(favorite => favorite.id === id)
 );
-

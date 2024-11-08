@@ -1,18 +1,18 @@
-
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import { IRov } from '../models/rov.interface';
 import { IFavorite } from '../models/store.interface';
 
-export interface State extends EntityState<IFavorite> {
-    favorites: IFavorite | null;
+export interface RoversState extends EntityState<IRov> {
+  favorites: IRov[]; 
 }
 
-export const boardAdaptor: EntityAdapter<IFavorite> = createEntityAdapter<IFavorite>(
-    {
-    selectId: (board: IFavorite) => board.id,
-    sortComparer: (a: IFavorite, b: IFavorite) => a.name.localeCompare(b.name),
-}
-);
+export const rovAdapter: EntityAdapter<IRov> = createEntityAdapter<IRov>({
+  selectId: (rov: IRov) => rov.id,
+  // sortComparer: (a, b) => a.rover.name.localeCompare(b.rover.name),
+});
 
-export const initialBoardState: State = boardAdaptor.getInitialState({
-    favorites: null,
+export const initialRoversState: RoversState = rovAdapter.getInitialState({
+  ids: [], 
+  entities: {}, 
+  favorites: [],
 });

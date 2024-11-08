@@ -1,0 +1,64 @@
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .toolbar{
+        display: flex;
+        justify-content: end;
+        background-color: gainsboro;
+    }
+
+    section{
+        .carousel{
+            position: relative;
+            img{
+                display: flex;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .prev, .next{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                height: 100%;
+                width: 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover{
+                    background: #3b3a3a78;
+                }
+            }
+            .prev{
+                left: 0;
+            }
+            .next{
+                right: 0;
+            }
+        }
+
+        .grid-container{
+            display: grid;
+            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+::ng-deep{
+    .mat-mdc-form-field-subscript-wrapper{
+        display: none;
+    }
+}
+
+.example-card-footer{
+    margin-left: 1rem;
+}

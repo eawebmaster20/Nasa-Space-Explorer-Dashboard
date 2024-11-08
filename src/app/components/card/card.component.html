@@ -2,10 +2,14 @@
         <div class="fyp-wrapper">
             <div class="recommended-item">
                 <img [src]="photo.img_src" [alt]="photo.id" class="image">
-                <div  [class]="bookmarked ? 'bookmarked':'not-bookmarked'" 
+                <div  [class]="(store.select(isFavorite(photo.id)) | async) ? 'bookmarked-active' : 'not-bookmarked'" 
                 (click)="toggleBookmark()" 
                 class="bookmark-wrapper">
-                    <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" stroke-width="1.5"/></svg>
+                    <button mat-mini-fab>
+                        <mat-icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Z"/></svg>
+                        </mat-icon>
+                    </button>
                 </div>
             </div>
             
