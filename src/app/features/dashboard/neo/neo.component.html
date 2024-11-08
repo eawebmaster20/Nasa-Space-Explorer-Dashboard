@@ -62,6 +62,16 @@
                 }
             }
         </div>
+        @if ((dataService.neoData |async) !==null) {
+            @for (item of (dataService.neoData |async)[startDate]; track $index) {
+            }
+            @empty {
+                <div class="neo-empty">
+                    <h2>No data yet</h2>
+                    <p>set the date filter to display data of that date.</p>
+                </div>
+            }
+        }
       </section>
 </div>
   
