@@ -2,13 +2,13 @@
     @for (item of (store.select(selectAll) | async); track item) {
         <app-card class="" [photo]="item"/>
     }
-    <div class="filter">
-        <mat-button-toggle-group (change)="filter($event.value)" name="FilterOptions" aria-label="Font Style">
-            <mat-button-toggle value="curiosity">Curiosity</mat-button-toggle>
-            <mat-button-toggle value="opportunity">Opportunity</mat-button-toggle>
-            <mat-button-toggle value="spirit">Spirit</mat-button-toggle>
-          </mat-button-toggle-group>
-    </div>
+</div>
+<div class="filter">
+    <mat-button-toggle-group (change)="filter($event.value)" name="FilterOptions" aria-label="Font Style">
+        <mat-button-toggle value="curiosity">Curiosity</mat-button-toggle>
+        <mat-button-toggle value="opportunity">Opportunity</mat-button-toggle>
+        <mat-button-toggle value="spirit">Spirit</mat-button-toggle>
+      </mat-button-toggle-group>
 </div>
 @for (item of (store.select(selectAll) | async); track item) {
 }
